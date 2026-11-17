@@ -12,6 +12,8 @@
      - keep the quotation marks and the commas between items;
      - inside a clue, write a quotation mark as \"  (backslash first);
      - *asterisks* around Latin words make them stand out on screen;
+     - <i>…</i> puts words in italics;
+     - <br> starts a new line;
      - \n inside a clue starts a new line.
    Values go 100, 200, 300 ... down each column (see "values" below).
    The board rebuilds itself from this list, so you can have more or fewer
@@ -20,79 +22,79 @@
    ========================================================================== */
 const GAME = {
   title: "PERĪCULUM!",
-  subtitle: "Stages 9–10",
+  subtitle: "gradūs IX–X",
 
   teams: ["Rōmānī", "Graecī", "Pompēiānī", "Nūcerīnī", "Aegyptiī"],
 
   values: [100, 200, 300, 400, 500],
-  romanNumerals: true,     // show the values as C, CC, CCC, CD, D (the number is shown small underneath)
+  romanNumerals: true,     // show the values as C, CC, CCC, CD, D (the number is shown small on the clue screen)
   timerSeconds: 45,        // countdown on each clue; 0 = no timer
   finalTimerSeconds: 90,   // countdown on the final question
   sound: true,             // chime when the timer runs out
 
   categories: [
     { name: "VOCĀBULA", hint: "vocabulary", clues: [
-      { q: "What does *celeriter* mean?",
-        a: "quickly" },
-      { q: "What does *inveniō* mean?",
-        a: "I find" },
-      { q: "The English word \"library\" comes from which Stage 10 noun, and what does that noun mean?",
-        a: "*liber* — book" },
-      { q: "Give the Latin for both: \"brother\" and \"wife\".",
-        a: "*frāter* and *uxor*" },
+      { q: "What does *ferō* mean?",
+        a: "I bring / bear / carry" },
+      { q: "Which Latin vocab word does \"library\" derive from? Write (i) the Latin word, (ii) its gender, and (iii) its meaning.",
+        a: "<i>liber</i> — masculine — \"book\"" },
+      { q: "Write the Latin words for:<br> \"mother\", \"brother\", and \"wife\".",
+        a: "māter, frāter, uxor" },
+      { q: "Give at least two different meanings for *quam*",
+        a: "\"than\" <br> \"how ___(adj.)!\" <br> \"as ___(adv./adj.) as possible!\"" },
       { q: "Translate:\n*cīvēs pācem cupiunt, sed inimīcī imperium capiunt.*",
         a: "The citizens want peace, but the enemies seize the empire." }
     ]},
 
-    { name: "GRADŪS", hint: "degrees of adjectives", clues: [
+    { name: "ADIECTĪVA", hint: "adjectives (3 degrees)", clues: [
       { q: "*laetus, laetior, laetissimus*\nName the three degrees, in order.",
         a: "positive, comparative, superlative" },
-      { q: "What degree is *fortissimī*, and what does it mean?",
-        a: "superlative — \"very brave\" or \"bravest\"" },
-      { q: "Translate:\n*Alexander est callidior quam Quīntus.*",
+      { q: "What degree is *fortissimus*, and what does it mean?",
+        a: "superlative — \"the bravest\" / \"the strongest\"" },
+      { q: "Translate:\n*Alexander callidior est quam Quīntus.*",
         a: "Alexander is cleverer (more clever) than Quintus." },
-      { q: "Give the superlatives of *magnus*, *bonus*, and *malus*.",
-        a: "*maximus*, *optimus*, *pessimus*" },
-      { q: "A superlative can end in three ways. Name all three endings, then give the superlative of *pulcher*.",
-        a: "*-issimus*, *-rrimus*, *-llimus* — *pulcherrimus*" }
+      { q: "Give the superlatives of<br> *magnus*, *bonus*, and *malus*.",
+        a: "maximus, optimus, pessimus" },
+      { q: "*dare melius est quam accipere.*<br> Identify the (i) adjective in this sentence, (ii) its degree, and (iii) its gender.",
+        a: "<i>melius</i> — comparative — neuter" }
     ]},
 
     { name: "ADVERBIA", hint: "adverbs", clues: [
       { q: "True or false: in English, most adjectives end in -ly.",
         a: "False. Most adverbs end in -ly: quickly, bravely." },
       { q: "Turn *laetus* into an adverb, and translate it.",
-        a: "*laetē* — happily" },
+        a: "<i>laetē</i> — happily" },
       { q: "Turn *fortis* into an adverb, and translate it.",
-        a: "*fortiter* — bravely" },
+        a: "<i>fortiter</i> — bravely" },
       { q: "Make an adverb from each: *īrātus*, *callidus*, *ferōx*.",
-        a: "*īrātē*, *callidē*, *ferōciter*" },
+        a: "īrātē, callidē, ferōciter" },
       { q: "*optimē* is an adverb. Which adjective is it made from, what degree is that adjective, and what does *optimē* mean?",
-        a: "*optimus*, the superlative of *bonus* — \"very well\" or \"best\"" }
+        a: "<i>optimus</i> — superlative (of <i>bonus</i>) — \"best\" or \"very well\"" }
     ]},
 
     { name: "VERBA", hint: "verbs", clues: [
-      { q: "Give the six personal endings of the present tense, in order.",
-        a: "*-ō* (or *-m*), *-s*, *-t*, *-mus*, *-tis*, *-nt*" },
-      { q: "What tense is *celebrābat*, and what does it mean?",
-        a: "imperfect — \"he (she) was celebrating\"" },
       { q: "*labōrō* means \"I work.\"\nGive the Latin for \"we work\" and \"y'all work.\"",
         a: "*labōrāmus* and *labōrātis*" },
-      { q: "Conjugate \"to be\" in the imperfect tense: all six forms.",
+      { q: "What tense is *celebrābat*, and what does it mean?",
+        a: "imperfect — \"he (she) was celebrating\"" },
+      { q: "Give the six personal endings of the *perfect tense*, in order.",
+        a: "*-ī*, *-istī*; *-it*; *-imus*, *-istis*, *-ērunt*" },
+      { q: "Conjugate \"to be\" in the *imperfect tense*: all six forms.",
         a: "*eram, erās, erat, erāmus, erātis, erant*" },
-      { q: "Give the Latin for \"I am,\" \"I was,\" \"I will be,\" and \"I have been.\"",
-        a: "*sum, eram, erō, fuī*" }
+      { q: "Using the verb *servō*, write all four of these in Latin:<br>(i) \"she protects\"<br>(ii) \"she was protecting\"<br>(iii) \"she has protected\"<br>(iv) \"she will protect\"",
+        a: "*servat — servābat — servāvit — servābit*" }
     ]},
 
     { name: "CĀSŪS", hint: "nouns & pronouns", clues: [
-      { q: "Which case shows the person something is given or shown to?",
+      { q: "Which case translates as \"to/for ___\"",
         a: "the dative" },
       { q: "Give the dative singular and the dative plural of *servus*.",
         a: "*servō* and *servīs*" },
       { q: "Translate:\n*servī gladiātōribus tunicās ostendēbant.*",
         a: "The slaves were showing tunics to the gladiators." },
-      { q: "Give the Latin for \"to me,\" \"to you,\" \"to us,\" and \"to y'all.\"",
+      { q: "Give the Latin for:<br> \"to me,\" \"to you,\" \"to us,\" and \"to y'all.\"",
         a: "*mihi, tibi, nōbīs, vōbīs*" },
-      { q: "Write the ten endings of the 3rd declension (masculine and feminine): nominative to ablative, singular, then plural.",
+      { q: "Write the case endings of the 3rd declension (masculine and feminine): nominative -> ablative, singular and plural.",
         a: "singular: (varies), *-is, -ī, -em, -e*\nplural: *-ēs, -um, -ibus, -ēs, -ibus*" }
     ]}
   ],
@@ -140,7 +142,8 @@ body {
 }
 button { font: inherit; color: inherit; cursor: pointer; }
 button:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--ochre); outline-offset: 2px; }
-.la { color: var(--ochre); font-style: normal; }           /* Latin inside a clue */
+.la { color: var(--ochre); font-style: normal; }
+.it { font-style: italic; }           /* Latin inside a clue */
 .answer .la { color: var(--plaster); }
 .caps { font-family: var(--caps); font-weight: 600; letter-spacing: 0.04em; }
 .hidden { display: none !important; }
@@ -164,6 +167,8 @@ header .tools { margin-left: auto; display: flex; gap: 0.5em; align-items: cente
 .btn.quiet:hover { color: var(--ochre); }
 .btn.icon { padding: 0.35em 0.55em; }
 .btn.glow { border-color: var(--ochre); color: var(--ochre); }
+.btn.used { background: var(--cinnabar-deep); border-color: rgba(217,164,65,0.22); color: rgba(243,232,210,0.22); }
+.btn.used:hover { border-color: rgba(217,164,65,0.6); color: rgba(243,232,210,0.5); }
 
 /* ---------- board ---------- */
 #board {
@@ -178,11 +183,12 @@ header .tools { margin-left: auto; display: flex; gap: 0.5em; align-items: cente
 .tile {
   position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
   background: var(--carbon); border: 0; border-radius: 2px; box-shadow: var(--frame);
-  color: var(--ochre); min-height: 0; padding: 0;
+  color: var(--ochre); min-height: 0; min-width: 0; padding: 0; overflow: hidden;
+  container-type: size; /* lets the numerals size themselves to the tile, not just the window */
   transition: transform 120ms ease, box-shadow 120ms ease;
 }
-.tile .num { font-family: var(--caps); font-weight: 700; font-size: clamp(24px, 4.6vw, 84px); line-height: 1; letter-spacing: 0.05em; }
-.tile .arabic { font-family: var(--serif); color: var(--plaster-dim); font-size: clamp(10px, 1.05vw, 18px); margin-top: 0.35em; letter-spacing: 0.08em; }
+.tile .num { font-family: var(--caps); font-weight: 700; font-size: min(clamp(24px, 4.6vw, 84px), 60cqh, 26cqw); line-height: 1; letter-spacing: 0.05em; }
+.tile .arabic { font-family: var(--serif); color: var(--plaster-dim); font-size: min(clamp(10px, 1.05vw, 18px), 15cqh); margin-top: 0.35em; letter-spacing: 0.08em; }
 .tile:hover, .tile:focus-visible { transform: translateY(-1px); box-shadow: 0 0 0 1px var(--ochre) inset, 0 0 0 4px var(--carbon) inset, 0 0 0 5px var(--ochre) inset; }
 .tile.used { background: var(--cinnabar-deep); box-shadow: 0 0 0 1px rgba(217,164,65,0.22) inset; color: rgba(243,232,210,0.22); }
 .tile.used .num { font-weight: 500; }
@@ -202,7 +208,11 @@ header .tools { margin-left: auto; display: flex; gap: 0.5em; align-items: cente
 .team .tname { font-size: clamp(14px, 1.5vw, 26px); color: var(--plaster); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .team .tscore { font-family: var(--caps); font-weight: 700; font-size: clamp(18px, 2.2vw, 38px); color: var(--ochre); letter-spacing: 0.04em; }
 .team .tscore.neg { color: #e08a7e; }
-.team.lead .tname::before { content: "\2726\00a0"; color: var(--ochre); }
+.team .tscore { cursor: text; border-radius: 2px; padding: 0 0.15em; }
+.team .tscore:hover { box-shadow: 0 0 0 1px rgba(217,164,65,0.5); }
+.team input.tscore { width: 5ch; background: rgba(0,0,0,0.35); border: 0; outline: 0; box-shadow: 0 0 0 2px var(--ochre); text-align: right; font: inherit; font-family: var(--caps); font-weight: 700; font-size: clamp(18px, 2.2vw, 38px); color: var(--ochre); }
+.team.lead { box-shadow: inset 0 0 0 3px var(--ochre), 0 0 14px rgba(217,164,65,0.35); } /* leading team gets a gold outline */
+.tnum { color: var(--plaster-dim); font-variant-numeric: tabular-nums; margin-right: 0.45em; }
 
 /* ---------- clue panel (also used for the final question) ---------- */
 #overlay {
@@ -245,12 +255,22 @@ header .tools { margin-left: auto; display: flex; gap: 0.5em; align-items: cente
 .award.right .yes { background: var(--verdigris); color: #fff; }
 .award.wrong { border-color: #b4473c; background: var(--wrong); }
 .award.wrong .no { background: #8e2a21; color: #fff; }
-.award input { width: 5em; background: #120c0a; color: var(--ochre); border: 0; border-left: 1px solid rgba(243,232,210,0.2); padding: 0.4em 0.5em; font: inherit; font-size: clamp(13px, 1.3vw, 22px); text-align: right; }
+.award.toggle { cursor: pointer; user-select: none; }
+.award.toggle:hover { filter: brightness(1.15); }
+.award .mk { border-left: 1px solid rgba(243,232,210,0.2); padding: 0.4em 0.75em; font-size: clamp(13px, 1.3vw, 22px); line-height: 1; display: inline-flex; align-items: center; justify-content: center; box-sizing: content-box; width: 1.2em; align-self: stretch; font-weight: 700; } /* fixed width so ✓ and ✗ take the same space */
+.award.right .mk { background: var(--verdigris); color: #fff; }
+.award.wrong .mk { background: #8e2a21; color: #fff; }
+.award .wcol { display: flex; flex-direction: column; align-self: stretch; border-left: 1px solid rgba(243,232,210,0.2); }
+.award .ws { font-size: clamp(10px, 0.9vw, 15px); color: var(--plaster-dim); text-align: right; padding: 0.15em 0.6em 0.25em; white-space: nowrap; }
+.award input { width: 5em; background: #120c0a; color: var(--ochre); border: 0; padding: 0.4em 0.5em; font: inherit; font-size: clamp(13px, 1.3vw, 22px); text-align: right; }
 .award input::-webkit-outer-spin-button, .award input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .keys { color: var(--plaster-dim); font-size: 0.85em; white-space: pre; }
 
 /* ---------- settings dialog ---------- */
 dialog { background: var(--carbon); color: var(--plaster); border: 0; box-shadow: var(--frame); border-radius: 3px; padding: 1.6em 1.8em; width: min(92vw, 34em); font-size: 1rem; }
+dialog#settings { position: fixed; }
+.dlgX { position: absolute; top: 0.6em; right: 0.6em; width: 2em; height: 2em; display: grid; place-items: center; background: transparent; color: var(--plaster-dim); border: 0; border-radius: 2px; font-size: 1.1em; line-height: 1; cursor: pointer; }
+.dlgX:hover, .dlgX:focus-visible { color: var(--plaster); background: rgba(243,232,210,0.1); }
 dialog::backdrop { background: rgba(30, 21, 17, 0.75); }
 dialog h2 { font-family: var(--caps); font-weight: 700; letter-spacing: 0.06em; margin: 0 0 0.8em; font-size: 1.4em; color: var(--ochre); }
 dialog h3 { font-size: 1em; margin: 1.2em 0 0.4em; color: var(--plaster-dim); font-weight: normal; font-style: italic; }
@@ -320,6 +340,7 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
 </section>
 
 <dialog id="settings">
+  <button class="dlgX" id="xSettings" title="close (Esc)" aria-label="close settings">✕</button>
   <h2>Settings</h2>
   <h3>Teams (names are shown on the board)</h3>
   <div id="teamRows"></div>
@@ -331,9 +352,9 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
   <div class="actions">
     <button class="btn primary" id="saveSettings">Save</button>
     <button class="btn" id="closeSettings">Cancel</button>
-    <button class="btn danger" id="newGame" title="Clears the board and all scores; keeps the teams">lūdus novus (new game)</button>
+    <button class="btn danger" id="newGame" title="Clears the board and all scores; keeps the teams">New Game (N)</button>
   </div>
-  <p class="note">Scores and used clues are remembered in this browser until you start a new game. To change the questions, edit the list at the top of this file and reload.</p>
+  <p class="note">Scores and used clues are remembered in this browser until you start a new game.</p>
 </dialog>
 
 <script>
@@ -349,7 +370,8 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
   // ---------- helpers
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  const fmt = (s) => esc(s).replace(/\*([^*]+)\*/g, '<i class="la">$1</i>').replace(/\n/g, "<br>");
+  // <i>…</i> written in a clue is shown in italics; everything else is shown as plain text
+  const fmt = (s) => esc(s).replace(/&lt;i&gt;([\s\S]*?)&lt;\/i&gt;/gi, '<i class="it">$1</i>').replace(/\*([^*]+)\*/g, '<i class="la">$1</i>').replace(/\s*&lt;br\s*\/?&gt;\s*/gi, "<br>").replace(/\n/g, "<br>");
   const roman = (n) => { if (!GAME.romanNumerals || n <= 0 || n >= 4000) return String(n);
     const t = [[1000,"M"],[900,"CM"],[500,"D"],[400,"CD"],[100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]];
     let r = ""; for (const [v, s] of t) while (n >= v) { r += s; n -= v; } return r; };
@@ -368,10 +390,18 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
   if (!state || !state.teams) state = fresh();
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* private window: play on without memory */ } };
 
-  const score = (team) => {
+  // score before the final question: wrong answers on the board cost nothing
+  const baseScore = (team) => {
     let s = team.adj || 0;
-    for (const k in state.awards) { const m = state.awards[k][team.id]; if (m) { const [ci, ri] = k.split("-").map(Number); s += m * values(ci, ri); } }
-    const fm = state.final.marks[team.id]; if (fm) s += fm * (Number(state.final.wagers[team.id]) || 0);
+    for (const k in state.awards) { const m = state.awards[k][team.id]; if (m > 0) { const [ci, ri] = k.split("-").map(Number); s += m * values(ci, ri); } }
+    return s;
+  };
+  // a team can't wager more than it has (and never less than 0)
+  const wagerOf = (team) => Math.min(Math.max(0, Number(state.final.wagers[team.id]) || 0), Math.max(0, baseScore(team)));
+  // final question: once its answer is shown, a right answer wins the wager and a wrong one loses it
+  const score = (team) => {
+    let s = baseScore(team);
+    if (state.final.stage >= 2) s += (state.final.marks[team.id] > 0 ? 1 : -1) * wagerOf(team);
     return s;
   };
 
@@ -395,14 +425,16 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
       const b = document.createElement("button"); b.className = "tile";
       if (!c.clues[ri]) { b.disabled = true; b.style.visibility = "hidden"; board.appendChild(b); return; }
       const v = values(ci, ri); const k = ci + "-" + ri;
-      b.innerHTML = `<span class="num">${roman(v)}</span>` + (GAME.romanNumerals ? `<span class="arabic">${v}</span>` : "");
+      b.innerHTML = `<span class="num">${roman(v)}</span>`; b.setAttribute("aria-label", v + " points");
       b.title = `${c.name}, ${v}`; b.setAttribute("aria-label", `${c.name} for ${v}` + (state.used[k] ? " (used)" : ""));
       if (state.used[k]) b.classList.add("used");
       b.addEventListener("click", () => openClue(ci, ri));
       board.appendChild(b);
     });
     const all = cats.reduce((n, c) => n + c.clues.length, 0), done = Object.keys(state.used).length;
-    $("finalBtn").classList.toggle("glow", all > 0 && done >= all && !!GAME.final);
+    const finalDone = state.final.stage >= 2; // faded like a used tile once its answer has been shown
+    $("finalBtn").classList.toggle("glow", all > 0 && done >= all && !!GAME.final && !finalDone);
+    $("finalBtn").classList.toggle("used", finalDone);
     $("finalBtn").classList.toggle("hidden", !GAME.final);
   }
 
@@ -412,13 +444,31 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
     const ss = state.teams.map(score); const top = Math.max(...ss);
     state.teams.forEach((t, i) => {
       const d = document.createElement("div"); d.className = "team" + (ss[i] === top && top > 0 && ss.filter(x => x === top).length === 1 ? " lead" : "");
-      d.innerHTML = `<span class="tname">${esc(t.name)}</span><span class="tscore${ss[i] < 0 ? " neg" : ""}">${ss[i]}</span>`;
-      d.title = "Scores are set on the clue screens; adjust them in settings."; el.appendChild(d);
+      d.innerHTML = `<span class="tname"><span class="tnum">${i + 1}</span>${esc(t.name)}</span><span class="tscore${ss[i] < 0 ? " neg" : ""}">${ss[i]}</span>`;
+      d.title = "Click the score to change it (Enter or Esc to save)."; el.appendChild(d);
+      d.querySelector(".tscore").addEventListener("click", () => editScore(t, d));
     });
+  }
+  // click a score to type a new one; Enter, Esc or clicking away saves it
+  function editScore(t, d) {
+    const span = d.querySelector("span.tscore"); if (!span) return;
+    const inp = document.createElement("input");
+    inp.className = "tscore"; inp.type = "text"; inp.inputMode = "numeric"; inp.value = score(t);
+    inp.setAttribute("aria-label", t.name + " score");
+    span.replaceWith(inp); inp.focus(); inp.select();
+    let done = false;
+    const commit = () => {
+      if (done) return; done = true;
+      const v = Number(inp.value.replace(/[^\d.\-]/g, ""));
+      if (inp.value.trim() !== "" && Number.isFinite(v)) { t.adj = (t.adj || 0) + Math.round(v) - score(t); save(); }
+      renderScores();
+    };
+    inp.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === "Escape") { e.preventDefault(); e.stopPropagation(); commit(); } });
+    inp.addEventListener("blur", commit);
   }
 
   // ---------- timer
-  let tm = { total: 0, left: 0, running: false, handle: null, last: 0 };
+  let tm = { total: 0, left: 0, running: false, handle: null, last: 0, chimer: null };
   function timerStart(seconds) {
     timerStop(); tm.total = seconds; tm.left = seconds; $("timer").className = ""; $("tbar").className = "tbar";
     if (!seconds) { $("timer").textContent = ""; $("tbar").classList.add("hidden"); return; }
@@ -429,9 +479,9 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
     if (tm.running) { const now = performance.now(); tm.left = Math.max(0, tm.left - (now - tm.last) / 1000); tm.last = now; }
     const s = Math.ceil(tm.left); $("timer").textContent = s > 0 ? String(s) : "tempus!";
     $("tfill").style.width = (tm.total ? (tm.left / tm.total) * 100 : 0) + "%";
-    if (tm.left <= 0 && tm.running) { tm.running = false; $("timer").classList.add("out"); $("tbar").classList.add("out"); chime(); }
+    if (tm.left <= 0 && tm.running) { tm.running = false; $("timer").classList.add("out"); $("tbar").classList.add("out"); chime(); tm.chimer = setInterval(chime, 2000); } // keeps chiming every 2 s until the answer is shown or the clue is closed
   }
-  function timerStop() { if (tm.handle) clearInterval(tm.handle); tm.handle = null; tm.running = false; }
+  function timerStop() { if (tm.handle) clearInterval(tm.handle); if (tm.chimer) clearInterval(tm.chimer); tm.handle = null; tm.chimer = null; tm.running = false; }
   function timerToggle() { if (!tm.total || tm.left <= 0) return; tm.running = !tm.running; tm.last = performance.now();
     $("timer").classList.toggle("paused", !tm.running); $("tbar").classList.toggle("paused", !tm.running); }
   function timerRestart() { if (tm.total) timerStart(tm.total); }
@@ -470,14 +520,21 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
     $("revealBtn").classList.toggle("hidden", revealed); $("backBtn").classList.toggle("hidden", !revealed);
     $("awards").classList.toggle("hidden", !revealed && !(cur && cur.final));
     $("cancelBtn").classList.toggle("hidden", revealed);
-    $("keys").textContent = revealed ? "✓ adds the points, ✗ takes them away      keys 1–9 = ✓" : (cur && cur.final && state.final.stage === 0 ? "space = show the question      esc = close" : "space = show the answer      esc = close");
+    $("keys").textContent = revealed ? "click a team (or press 1–9) to mark it correct      ⌘Z = hide the answer again" : (cur && cur.final && state.final.stage === 0 ? "space = show the question      esc = close" : "space = show the answer      esc = close");
     fit();
   }
   function reveal() {
     if (!cur) return; revealed = true; timerStop(); $("timer").className = ""; $("timer").textContent = ""; $("tbar").classList.add("hidden");
     if (!cur.final) { state.used[cur.ci + "-" + cur.ri] = true; save(); }
     else { state.final.stage = 2; save(); }
-    showStage(); renderAwards(); renderBoard(); $("backBtn").focus();
+    showStage(); renderAwards(); renderBoard(); renderScores(); $("backBtn").focus();
+  }
+  // Cmd/Ctrl+Z after the answer is shown: hide it again and restart the clue fresh (timer and points for this clue reset)
+  function unreveal() {
+    if (!cur || !revealed) return;
+    if (cur.final) { state.final.stage = 1; state.final.marks = {}; save(); openFinal(); }
+    else { const k = cur.ci + "-" + cur.ri; delete state.used[k]; delete state.awards[k]; save(); openClue(cur.ci, cur.ri); }
+    renderBoard(); renderScores();
   }
   function closeClue() { timerStop(); overlay.classList.add("hidden"); cur = null; renderBoard(); renderScores(); }
   function renderAwards() {
@@ -486,12 +543,17 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
     const marks = isFinal ? state.final.marks : (state.awards[k] || {});
     state.teams.forEach((t, i) => {
       const m = marks[t.id] || 0;
-      const d = document.createElement("div"); d.className = "award" + (m > 0 ? " right" : m < 0 ? " wrong" : "");
-      const buttons = (!isFinal || revealed) ? `<button class="yes" title="correct: +${isFinal ? "wager" : values(cur.ci, cur.ri)} (${i + 1})" aria-label="${esc(t.name)} correct">✓</button><button class="no" title="wrong: −${isFinal ? "wager" : values(cur.ci, cur.ri)}" aria-label="${esc(t.name)} wrong">✗</button>` : "";
-      d.innerHTML = `<span class="n">${esc(t.name)}</span>` + (isFinal ? `<input type="number" min="0" step="100" placeholder="wager" aria-label="wager for ${esc(t.name)}" value="${state.final.wagers[t.id] ?? ""}">` : "") + buttons;
+      // once the answer is shown every team starts out marked wrong (✗); clicking the team toggles it to right (✓) and back
+      const live = !isFinal || revealed, ok = m > 0;
+      const d = document.createElement("div"); d.className = "award" + (live ? (ok ? " right" : " wrong") + " toggle" : "");
+      const mk = live ? `<span class="mk" aria-hidden="true">${ok ? "✓" : "✗"}</span>` : "";
+      d.innerHTML = `<span class="n"><span class="tnum">${i + 1}</span>${esc(t.name)}</span>` + (isFinal ? `<span class="wcol"><input type="number" min="0" max="${Math.max(0, baseScore(t))}" step="100" placeholder="wager" aria-label="wager for ${esc(t.name)}" value="${state.final.wagers[t.id] != null ? wagerOf(t) : ""}"><span class="ws">score ${score(t)}</span></span>` : "") + mk;
       if (isFinal) { const inp = d.querySelector("input");
-        inp.addEventListener("change", () => { state.final.wagers[t.id] = Math.max(0, Number(inp.value) || 0); save(); renderScores(); }); }
-      if (buttons) { d.querySelector(".yes").addEventListener("click", () => mark(t.id, 1)); d.querySelector(".no").addEventListener("click", () => mark(t.id, -1)); }
+        inp.addEventListener("change", () => { state.final.wagers[t.id] = Math.max(0, Number(inp.value) || 0); state.final.wagers[t.id] = wagerOf(t); save(); renderAwards(); renderScores(); }); }
+      if (live) {
+        d.title = `${t.name}: ${ok ? "correct" : "not correct"} (click or press ${i + 1} to change)`;
+        d.addEventListener("click", (e) => { if (e.target.tagName !== "INPUT") mark(t.id, 1); });
+      }
       el.appendChild(d);
     });
   }
@@ -508,7 +570,7 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
     $("where").innerHTML = `QUAESTIŌ ULTIMA<span class="val">${esc(f.name || "")}</span>` + (f.hint ? `<span class="hint">${esc(f.hint)}</span>` : "");
     revealed = state.final.stage >= 2;
     if (state.final.stage === 0) {
-      $("clueText").innerHTML = `<span class="la">${esc(f.name || "")}</span><br><span style="font-size:0.6em;color:var(--plaster-dim)">Teams write their wagers now.<br>Enter each wager below, then press <b>ostende quaestiōnem</b>.</span>`;
+      $("clueText").innerHTML = `<span class="la">${esc(f.name || "")}</span><br><span style="font-size:0.6em;color:var(--plaster-dim)">Teams write their wagers now.</span>`;
       $("revealBtn").textContent = "ostende quaestiōnem";
     } else { $("clueText").innerHTML = fmt(f.q); $("revealBtn").textContent = "ostende respōnsum"; }
     $("answerText").innerHTML = fmt(f.a);
@@ -538,6 +600,11 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
   function readRows() { [...$("teamRows").children].forEach((r, i) => { const [n, a] = r.querySelectorAll("input"); if (state.teams[i]) { state.teams[i].name = n.value.trim() || state.teams[i].name; state.teams[i].adj = Number(a.value) || 0; } }); }
   $("saveSettings").addEventListener("click", () => { readRows(); state.settings.timer = Math.max(0, Number($("setTimer").value) || 0); state.settings.finalTimer = Math.max(0, Number($("setFinalTimer").value) || 0); state.settings.sound = $("setSound").checked; save(); dlg.close(); renderScores(); });
   $("closeSettings").addEventListener("click", () => dlg.close());
+  // with settings open, N = New Game (not while typing in a box)
+  dlg.addEventListener("keydown", (e) => {
+    if ((e.key === "n" || e.key === "N") && !e.metaKey && !e.ctrlKey && !e.altKey && e.target.tagName !== "INPUT") { e.preventDefault(); $("newGame").click(); }
+  });
+  $("xSettings").addEventListener("click", () => dlg.close());
   $("newGame").addEventListener("click", () => { if (confirm("Start a new game? The board is reset and all scores return to zero.")) { const t = state.teams.map(x => ({ ...x, adj: 0 })); const s = state.settings; state = fresh(); state.teams = t; state.settings = s; save(); dlg.close(); renderBoard(); renderScores(); } });
 
   // ---------- wiring
@@ -548,8 +615,16 @@ dialog p.note { color: var(--plaster-dim); font-size: 0.9em; margin: 0.4em 0 0; 
   $("finalBtn").addEventListener("click", openFinal);
   $("settingsBtn").addEventListener("click", openSettings);
   $("fullBtn").addEventListener("click", () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen().catch(() => {}));
+  // Cmd/Ctrl+Z: caught in the capture phase so nothing else on the page sees it first
+  window.addEventListener("keydown", (e) => {
+    if ((e.metaKey || e.ctrlKey) && !e.shiftKey && !e.altKey && (e.code === "KeyZ" || e.key === "z" || e.key === "Z")
+        && !dlg.open && e.target.tagName !== "INPUT" && !overlay.classList.contains("hidden") && revealed) {
+      e.preventDefault(); e.stopPropagation(); unreveal();
+    }
+  }, true);
   document.addEventListener("keydown", (e) => {
     if (dlg.open || e.target.tagName === "INPUT") return;
+    if (e.key === "," && !e.altKey) { e.preventDefault(); openSettings(); return; } // "," or Cmd/Ctrl+","
     if (e.key === "f" || e.key === "F") { $("fullBtn").click(); return; }
     if (overlay.classList.contains("hidden")) return;
     if (e.key === " " || e.key === "Enter") { e.preventDefault(); if (!revealed) (cur.final ? finalNext() : reveal()); else closeClue(); }
